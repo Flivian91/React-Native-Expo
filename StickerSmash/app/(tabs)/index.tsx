@@ -13,13 +13,13 @@ export default function HomeScreen() {
   // Slect Image from the library
   const picImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'],
+      mediaTypes: ["images"],
       allowsEditing: true, //able to edit
       quality: 1,
     });
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
-      console.log(result);
+      console.log(result.assets[0].uri);
     } else {
       alert("You did not select any image.");
     }
@@ -32,7 +32,7 @@ export default function HomeScreen() {
     });
     if (!imageResult.canceled) {
       setTakenImage(imageResult.assets[0].uri);
-      console.log(imageResult);
+      console.log(imageResult.assets[0].uri);
     } else {
       alert("No Image Taken");
     }

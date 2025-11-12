@@ -1,9 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  StyleSheet,
+  View,
+} from "react-native";
 
 export default function ContactScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Contact Screen</Text>
+      <ActivityIndicator hidesWhenStopped />
+      <Button
+        onPress={() => alert("Hello i was pressed")}
+        title="Hello"
+        accessibilityLabel="Basice button of hello world"
+        color={"#841584"}
+      />
     </View>
   );
 }
